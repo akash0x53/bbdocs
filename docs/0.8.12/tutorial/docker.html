@@ -113,11 +113,10 @@ For example, Standard Ubuntu, Debian and Arch systems.</li>
 </div>
 <div class="section" id="building-and-running-buildbot">
 <h2>Building and running Buildbot<a class="headerlink" href="#building-and-running-buildbot" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Download Buildbot Dockerfile.</span>
-wget https://raw.github.com/buildbot/buildbot/master/master/contrib/Dockerfile
+<div class="highlight-bash"><div class="highlight"><pre>
 
 <span class="c"># Build the Buildbot container (it will take a few minutes to download packages)</span>
-docker build -t buildbot - &lt; Dockerfile
+docker build -t buildbot https://raw.github.com/buildbot/buildbot/master/master/contrib/Dockerfile
 
 <span class="c"># Run buildbot</span>
 <span class="nv">CONTAINER_ID</span><span class="o">=</span><span class="k">$(</span>docker run -d -p 8010:8010 -p <span class="m">22</span> buildbot<span class="k">)</span>
